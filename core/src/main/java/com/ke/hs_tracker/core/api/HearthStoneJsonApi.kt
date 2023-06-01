@@ -10,7 +10,7 @@ interface HearthStoneJsonApi {
     /**
      * 获取卡牌数据
      */
-    @GET("v1/{versionCode}/{region}/cards.json")
+    @GET("{versionCode}/{region}/cards.json")
     suspend fun getCardJsonList(
         @Path("versionCode") versionCode: String,
         @Path("region") region: String,
@@ -18,6 +18,6 @@ interface HearthStoneJsonApi {
 
 
     companion object {
-        const val BASE_URL = "https://api.hearthstonejson.com/"
+        const val BASE_URL = "https://api.hearthstonejson.com/v1/"
     }
 }
